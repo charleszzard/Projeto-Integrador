@@ -17,8 +17,7 @@
 
     <main>
         <section id="data">
-            <h2>MONITORAMENTO DE TEMPERATURA E MONÓXIDO DE CARBONO (CO) 
-            </h2>
+            <h2>MONITORAMENTO DE TEMPERATURA E MONÓXIDO DE CARBONO (CO)</h2>
 
             <div id="data-hora">
                 <p>Data: <span id="current-data">--</span></p>
@@ -28,19 +27,37 @@
             <div id="monitoramento">
                 <div id="termometro">
                     <p class="estilizado">Temperatura:<br><br>
-                        <span id="Temperatura">30</span> °C</p>
+                        <span id="Temperatura">--</span> °C</p>
                 </div>
                 <div id="co-grafico">
-                    <p class="estilizado">Níveis de monóxido de carbono (CO): <br><br><span id="co-nivel">20.5</span> ppm</p>
+                    <p class="estilizado">Níveis de monóxido de carbono (CO):<br><br>
+                        <span id="co-nivel">--</span> ppm</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Grupo: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro </p>
+        <p>Grupo: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Função para formatar a data e hora
+            
+            function updateDateTime() {
+                const now = new Date();
+                const data = now.toLocaleDateString('pt-BR');
+                const hora = now.toLocaleTimeString('pt-BR');
+                document.getElementById('current-data').textContent = data;
+                document.getElementById('current-hora').textContent = hora;
+            }
+
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        });
+    </script>
+
 </body>
 </html>
