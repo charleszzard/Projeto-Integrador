@@ -3,61 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Integrador</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Monitoramento em Tempo Real</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <h1>Projeto Integrador</h1>
-            <p>MONITORAMENTO EM TEMPO REAL</p>
+            <h1>Monitoramento de Ambiente</h1>
+            <p>Leitura em Tempo Real de Temperatura e Monóxido de Carbono</p>
         </nav>
     </header>
 
     <main>
         <section id="data">
-            <h2>MONITORAMENTO DE TEMPERATURA E MONÓXIDO DE CARBONO (CO)</h2>
-
             <div id="data-hora">
                 <p>Data: <span id="current-data">--</span></p>
                 <p>Hora: <span id="current-hora">--</span></p>
             </div>
 
             <div id="monitoramento">
-                <div id="termometro">
-                    <p class="estilizado">Temperatura:<br><br>
-                        <span id="Temperatura">--</span> °C</p>
+                <div class="card">
+                    <h2>Temperatura</h2>
+                    <p><span id="s_temperatura">--</span> °C</p>
                 </div>
-                <div id="co-grafico">
-                    <p class="estilizado">Níveis de monóxido de carbono (CO):<br><br>
-                        <span id="co-nivel">--</span> ppm</p>
+                <div class="card">
+                    <h2>Monóxido de Carbono (CO)</h2>
+                    <p><span id="s_monoxido">--</span> ppm</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Grupo: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
+        <p>Desenvolvido por: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // Função para formatar a data e hora
-            
-            function updateDateTime() {
-                const now = new Date();
-                const data = now.toLocaleDateString('pt-BR');
-                const hora = now.toLocaleTimeString('pt-BR');
-                document.getElementById('current-data').textContent = data;
-                document.getElementById('current-hora').textContent = hora;
-            }
-
-            updateDateTime();
-            setInterval(updateDateTime, 1000);
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
