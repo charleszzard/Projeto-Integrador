@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('http://3.17.149.6:5000/fetch_data');
             const data = await response.json();
 
-            // Verifica se os dados retornam as chaves esperadas
-            const lastData = data[data.length - 1]; // Pega o último objeto do array
+            // Filtra os dados para pegar apenas os do setor "ads"
+            const adsData = data.filter(item => item.setor === 'cdl');
 
-            if (lastData) {
+            if (adsData.length > 0) {
+                const lastData = adsData[adsData.length - 1]; // Pega o último objeto do array filtrado
+
                 // Atualiza os valores de temperatura e CO no HTML
                 document.getElementById('s_temperatura').textContent = lastData.s_termico !== null ? lastData.s_termico.toFixed(1) : '--';
                 document.getElementById('s_monoxido').textContent = lastData.s_monoxido !== null ? lastData.s_monoxido.toFixed(1) : '--';
@@ -18,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('current-data').textContent = date;
                 document.getElementById('current-hora').textContent = time;
             } else {
-                console.error('Dados da API estão incompletos ou incorretos.');
+                console.error('Nenhum dado encontrado para o setor "ads".');
+                document.getElementById('s_temperatura').textContent = '--';
+                document.getElementById('s_monoxido').textContent = '--';
             }
         } catch (error) {
             // Em caso de erro, exibe um valor padrão
