@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interativo de Setores</title>
+    <link rel="stylesheet" href="mstyles.css">
+</head>
+<body>
+    <header>
+        <h1>MONITORAMENTO AMARIV</h1>
+    </header>
+    <main>
+        <div id="data">
+            <div id="data-hora">
+                <p id="timestamp">Última atualização: <span id="dataAtual"></span></p>
+            </div>
+            <div id="monitoramento" class="mapa">
+                <a href="ads.html" class="card-link">
+                    <div class="card">
+                        <h2 id="setor1" class="setor" data-setor="Aqui são separados os materiais para a reciclagem." data-description="Área de separação de lixo">Área de Separação de Lixo</h2>
+                        <p id="statusSetor1">Status: <span class="status-text">--</span></p>
+                    </div>
+                </a>
+                <a href="cdl.html" class="card-link">
+                    <div class="card">
+                        <h2 id="setor2" class="setor" data-setor="Todo material coletado após a separação passa pelo processo" data-description="Compactador de lixo">Compactador de Lixo</h2>
+                        <p id="statusSetor2">Status: <span class="status-text">--</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="info-panel">
+            <h3 id="infoTitle">Passe o mouse sobre um Setor</h3>
+            <p id="infoDescription">Informações detalhadas sobre o setor aparecerão aqui.</p>
+        </div>
+    </main>
+    <footer>
+        <p>Developed by: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
+    </footer>
+    <script src="scriptP.js"></script>
+</body>
+</html>

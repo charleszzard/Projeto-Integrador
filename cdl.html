@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento em Tempo Real</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Monitoramento de Ambiente</h1>
+            <p>Leitura em Tempo Real de Temperatura e Monóxido de Carbono</p>
+        </nav>
+    </header>
+
+    <main>
+        <section id="data">
+            <div id="data-hora">
+                <p>Data: <span id="current-data">--</span></p>
+                <p>Hora: <span id="current-hora">--</span></p>
+            </div>
+
+            <div id="monitoramento">
+                <div class="card">
+                    <h2>Temperatura</h2>
+                    <p><span id="s_temperatura">--</span> °C</p>
+                </div>
+                <div class="card">
+                    <h2>Monóxido de Carbono (CO)</h2>
+                    <p><span id="s_monoxido">--</span> ppm</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botão para voltar ao mapaP.html -->
+        <div class="button-container">
+            <a href="mapaP.html" class="back-button">Voltar ao Mapa</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed by: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
+    </footer>
+
+    <script src="scriptCDL.js"></script>
+</body>
+</html>
