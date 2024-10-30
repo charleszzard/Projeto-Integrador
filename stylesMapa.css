@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #1e1e1e, #121212, #000000);
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ecbe04;
+}
+
+#data-hora p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 800px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    text-align: center;
+    width: 100%; /* Ajusta a largura para ocupar 100% do espaço disponível */
+    max-width: 300px; /* Limita a largura máxima */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: #000000;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.setor {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ecbe04;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.status-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ecbe04;
+    text-align: center;
+}
+
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    background-color: rgba(20, 20, 20, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#infoTitle {
+    font-size: 1.8rem;
+    color: #ecbe04;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#infoDescription {
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+footer {
+    background-color: #121212;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Diminui o tamanho do título em telas menores */
+    }
+
+    .card {
+        height: auto; /* Permite que os cartões ajustem sua altura conforme o conteúdo */
+    }
+
+    .info-panel {
+        padding: 10px; /* Reduz o padding do painel de informações */
+    }
+
+    .setor {
+        font-size: 1.2rem; /* Diminui o tamanho da fonte do setor */
+    }
+
+    .status-text {
+        font-size: 1rem; /* Diminui o tamanho da fonte do status */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem; /* Reduz ainda mais para telas muito pequenas */
+    }
+
+    #data-hora p {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+    }
+}

@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Largura máxima para evitar que o conteúdo fique muito largo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 20px; /* Adiciona espaçamento lateral */
+}
+
+header {
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ecbe04;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+#data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#data-hora {
+    margin-bottom: 20px;
+}
+
+#data-hora p {
+    font-size: 1.5rem;
+}
+
+#monitoramento-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha */
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 10px; /* Adiciona um pouco de espaço nas laterais */
+}
+
+#monitoramento {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os cards "quebrem" para a próxima linha se necessário */
+    width: 65%; /* Ajusta a largura para centralizar os cards */
+}
+
+.card {
+    background-color: #000000;
+    color: #ffffff;
+    flex: 1 1 300px; /* Permite que o card se expanda e contraia com base no espaço disponível */
+    max-width: 100%; /* Impede que os cards excedam a largura do contêiner */
+    height: auto; /* Permite que a altura do card se ajuste ao conteúdo */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card h2 {
+    font-size: 1.5rem; /* Tamanho reduzido para melhor adaptação */
+    margin-bottom: 10px;
+    color: #f5f3ee;
+}
+
+.card p {
+    font-size: 2rem; /* Tamanho da mensagem */
+    font-weight: bold;
+    color: #c4990f;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+#placa-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%; /* Largura ajustada para a coluna de placas */
+}
+
+.placa-extintor, .placa-notificacao {
+    background-color: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    height: 150px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff;
+    text-align: center; /* Centraliza o texto dentro do card */
+}
+
+.placa-extintor:hover, .placa-notificacao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.placa-extintor h2, .placa-notificacao h2 {
+    font-size: 1.5rem; /* Tamanho do título */
+    margin-bottom: 10px;
+    color: #c4990f;
+}
+
+.placa-extintor p, .placa-notificacao p {
+    font-size: 1.2rem; /* Tamanho do texto */
+    margin: 0; /* Remove margens do texto */
+}
+
+/* Estilos para o botão */
+.button-container {
+    margin: 20px 0; /* Espaçamento superior e inferior */
+}
+
+.back-button {
+    background-color: #ecbe04; /* Cor de fundo do botão */
+    color: #000000; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+.back-button:hover {
+    background-color: #d4a404; /* Cor do botão ao passar o mouse */
+}
+
+.footer {
+    background-color: #000000;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Media Queries para tornar o design responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    #data-hora p {
+        font-size: 1.2rem;
+    }
+
+    .card h2 {
+        font-size: 1.3rem; /* Tamanho ajustado para dispositivos móveis */
+    }
+
+    .card p {
+        font-size: 1.5rem; /* Tamanho ajustado para dispositivos móveis */
+    }
+
+    .placa-extintor h2, .placa-notificacao h2 {
+        font-size: 1.3rem; /* Tamanho ajustado para dispositivos móveis */
+    }
+
+    .placa-extintor p, .placa-notificacao p {
+        font-size: 1rem; /* Tamanho ajustado para dispositivos móveis */
+    }
+
+    .back-button {
+        font-size: 1rem; /* Tamanho do botão ajustado para telas menores */
+        padding: 8px 16px; /* Ajuste de padding */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem; /* Tamanho ajustado para telas muito pequenas */
+    }
+
+    .card {
+        padding: 15px; /* Menos padding em dispositivos menores */
+    }
+}
