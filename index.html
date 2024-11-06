@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoramento em Tempo Real</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mapa Interativo de Setores</title>
+    <link rel="stylesheet" href="stylesMapa.css">
 </head>
 <body>
-
     <header>
-        <nav>
-            <h1>Monitoramento de Ambiente</h1>
-            <p>Leitura em Tempo Real de Temperatura e Monóxido de Carbono</p>
-        </nav>
+        <h1>MONITORAMENTO AMARIV</h1>
     </header>
-
     <main>
-        <section id="data">
+        <div id="data">
             <div id="data-hora">
-                <p>Data: <span id="current-data">--</span></p>
-                <p>Hora: <span id="current-hora">--</span></p>
+                <p id="timestamp">Última atualização: <span id="dataAtual"></span></p>
             </div>
-
-            <div id="monitoramento">
-                <div class="card">
-                    <h2>Temperatura</h2>
-                    <p><span id="s_temperatura">--</span> °C</p>
-                </div>
-                <div class="card">
-                    <h2>Monóxido de Carbono (CO)</h2>
-                    <p><span id="s_monoxido">--</span> ppm</p>
-                </div>
+            <div id="monitoramento" class="mapa">
+                <a href="ads.html" class="card-link">
+                    <div class="card">
+                        <h2 id="setor1" class="setor" data-setor="Aqui são separados os materiais para a reciclagem." data-description="Área de separação de resíduos">Área de Separação de resíduos</h2>
+                        <p id="statusSetor1">Status: <span class="status-text">--</span></p>
+                    </div>
+                </a>
+                <a href="cdl.html" class="card-link">
+                    <div class="card">
+                        <h2 id="setor2" class="setor" data-setor="Todo material coletado após a separação passa pelo processo" data-description="Compactador de resíduos">Compactador de resíduos</h2>
+                        <p id="statusSetor2">Status: <span class="status-text">--</span></p>
+                    </div>
+                </a>
             </div>
-        </section>
+        </div>
+        <div class="info-panel">
+            <h3 id="infoTitle">Passe o mouse sobre um Setor</h3>
+            <p id="infoDescription">Informações detalhadas sobre o setor aparecerão aqui.</p>
+        </div>
     </main>
-
     <footer>
-        <p>Desenvolvido por: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
+        <p>Developed by: Alisson, Charles, Emily, Fernanda, Hebert, Matheus, Pedro</p>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="scriptIndex.js"></script>
 </body>
 </html>

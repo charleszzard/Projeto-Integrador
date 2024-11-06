@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoramento em Tempo Real</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesSetores.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,21 +23,33 @@
                 <p>Hora: <span id="current-hora">--</span></p>
             </div>
 
-            <div id="monitoramento">
-                <div class="card">
-                    <h2>Temperatura</h2>
-                    <p><span id="s_temperatura">--</span> °C</p>
+            <div id="monitoramento-container">
+                <div id="monitoramento">
+                    <div class="card">
+                        <h2>Temperatura</h2>
+                        <p><span id="s_temperatura">--</span> °C</p>
+                    </div>
+                    <div class="card">
+                        <h2>Monóxido de Carbono (CO)</h2>
+                        <p><span id="s_monoxido">--</span> ppm</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h2>Monóxido de Carbono (CO)</h2>
-                    <p><span id="s_monoxido">--</span> ppm</p>
+
+                <div id="placa-info">
+                    <div class="placa-extintor">
+                        <h2>Extintor</h2>
+                        <p>--</p>
+                    </div>
+                    <div class="placa-notificacao">
+                        <h2>Notificações</h2>
+                        <p>Status do sistema</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Botão para voltar ao mapaP.html -->
         <div class="button-container">
-            <a href="mapaP.html" class="back-button">Voltar ao Mapa</a>
+            <a href="index.html" class="back-button">Voltar ao Mapa</a>
         </div>
     </main>
 

@@ -31,14 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
     function updateStatus(s_termico, s_monoxido, statusId) {
         const statusText = document.getElementById(statusId).querySelector('.status-text');
+
         if (typeof s_termico === 'number' && typeof s_monoxido === 'number') {
-            if (s_termico > 100 || s_monoxido > 80) {
-                statusText.innerText = 'WARNING';
+            if (s_termico > 50 || s_monoxido > 80) {
+                statusText.innerText = 'CRITICAL';
                 statusText.style.color = 'red';
                 blink(statusText);
-            } else {
+            }else if(s_termico >= 40 && s_termico <= 50  || s_monoxido >= 65 && s_monoxido <= 80){
+                statusText.innerText = 'WARNING';
+                statusText.style.color = 'yellow';
+                blink(statusText);
+            }else{
                 statusText.innerText = 'OK';
                 statusText.style.color = 'green';
                 clearBlink(statusText);
@@ -82,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('infoDescription').textContent = card.querySelector('.setor').getAttribute('data-setor');
 
             // Altera a cor do card temporariamente
-            card.style.backgroundColor = '#D8BFD8';
+            card.style.backgroundColor = '#494747';
         });
 
         // Evento para quando o mouse sai do card
